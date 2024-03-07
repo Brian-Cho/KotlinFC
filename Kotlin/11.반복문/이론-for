@@ -1,0 +1,31 @@
+반복문(for문)
+- 기본 format
+    for(변수명 in 범위){
+        ~~~~~~~~~~~
+    }
+
+    범위
+    - range
+        0..3
+    - progression + step
+        0..5 step(2)
+    - progression + downTo
+        5 downTo 0
+
+    val numbers = 1..10
+
+    for ((index, number) in numbers.withIndex()) {        // index랑 number 이름 바꿀 수 있음 withIndex()
+        println("" + index + "  |  " + number)            // println("$index  |  $number")
+    }
+
+    numbers.forEach { number ->
+        println(number)
+    }
+
+    numbers.forEachIndexed { index, number ->
+        println("$index  |  $number")
+    }
+
+
+
+

@@ -1,0 +1,72 @@
+listOf<자료형>(값1, 값2, 값3)
+mutableListOf<자료형>(값1, 값2, 값3)
+setOf<자료형> (값1, 값2, 값3)
+mutableSetOf<자료형>(값1, 값2, 값3, 값1, 값1)
+mapOf<자료형,자료형>(키1 to 벨류1, 키2 to 벨류2 ...)
+mutableMapOf<자료형,자료형>(키1 to 벨류1, 키2 to 벨류2 ...)
+
+println(numbers.get(1))
+println(numbers.indexOf(2))
+numbers2.add(50)
+numbers2.removeAt(0)
+numbers2.addAll(2, listOf<Int>(100, 100))
+numbers3.containsAll(setOf<Int>(1, 3))
+numbers4.remove(10)
+println(numbers5.keys)
+println(numbers5.values)
+println(numbers5.size)
+println(numbers5.get(1))
+println(numbers5.getOrDefault(1, "dafault"))
+mapOf<Int, String>(Pair(1, "one"), Pair(2, "two"))
+----------------------------------------------------------------
+콜렉션(Collection) - List / Set / Map - mutable, Immutable
+
+- 변경가능 여부
+    - Mutable -> 변경가능
+    - Immutable -> 불변
+- 특징으로 분리
+    - List
+        - Mutable, Immutable
+    - Set
+        - Mutable, Immutable
+    - Map
+        - Mutable, Immutable
+
+
+
+- List
+    - immutable
+        - 형태
+            - listOf<자료형>(값1, 값2, 값3)
+            ex) val numbers = listOf<Int>(1,2,3)
+    - mutable
+        - 형태
+            - mutableListOf<자료형>(값1, 값2, 값3)
+            ex) val numbers = mutableListOf<int>(1,2,3)
+
+- Set
+    - 집합 -> 중복 제거!
+    - immutable
+        - 형태
+            - setOf<자료형> (값1, 값2, 값3, 값1, 값1) ->  setOf<자료형> (값1, 값2, 값3)
+    - mutable
+        - 형태
+            - mutableSetOf<자료형>(값1, 값2, 값3, 값1, 값1)
+
+- Map
+    - 키-벨류 (key-value) -> 저장 방식
+    - immutable
+        - 형태
+                - mapOf<자료형,자료형>(키1 to 벨류1, 키2 to 벨류2 ...)
+            ex) var numbers = mapOf<String, String>("1" to "일", "2" to "이")
+    - mutable
+        -형태
+            - mutableMapOf<자료형,자료형>(키1 to 벨류1, 키2 to 벨류2 ...)
+
+
+- 기본적으로 불변한 immutable을 사용하는 것이 좋다
+리스트 -> (10,20,30)
+코드 500줄
+리스트                  => 여기서 리스트 다시 불러오기엔 mutable은 500줄 변화를 다 봐야함
+
+- 콜렉션은 전부다 크기가 고정되어 있지 않다 (배열은 크기가 고정되어 있어 사용하기 쉽지 않음)
